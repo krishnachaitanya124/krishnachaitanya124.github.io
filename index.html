@@ -10,9 +10,15 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
+      background-color: #ffffff;
+      color: #1a1a1a;
       padding-top: 100px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #0d1117 !important;
+      color: #c9d1d9 !important;
     }
 
     .toggle-btn {
@@ -20,52 +26,64 @@
       top: 20px;
       right: 20px;
       z-index: 999;
-      background-color: #238636;
+      background-color: #0d6efd;
       color: white;
       border: none;
       padding: 10px 16px;
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     h2 {
       text-align: center;
       font-weight: 700;
       margin-bottom: 30px;
-      color: #58a6ff;
+      color: #0d6efd;
     }
 
     .project-card {
-      background-color: #161b22;
+      background-color: #f8f9fa;
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 24px;
       transition: 0.3s ease;
-      box-shadow: 0 0 0 1px #30363d;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .dark-mode .project-card {
+      background-color: #161b22 !important;
+      box-shadow: 0 0 0 1px #30363d !important;
     }
 
     .project-card:hover {
-      box-shadow: 0 0 0 1px #58a6ff;
       transform: scale(1.01);
+      box-shadow: 0 0 0 2px #0d6efd;
     }
 
     .project-title {
       font-size: 1.25rem;
       font-weight: 600;
+    }
+
+    .dark-mode .project-title {
       color: #f0f6fc;
     }
 
     .project-desc {
-      color: #8b949e;
+      color: #555;
       margin-top: 6px;
       font-size: 0.95rem;
     }
 
+    .dark-mode .project-desc {
+      color: #8b949e;
+    }
+
     .badge {
-      background-color: #21262d;
-      color: #c9d1d9;
+      background-color: #e9ecef;
+      color: #212529;
       font-size: 0.75rem;
       padding: 5px 10px;
       border-radius: 20px;
@@ -74,11 +92,15 @@
       display: inline-block;
     }
 
+    .dark-mode .badge {
+      background-color: #21262d;
+      color: #c9d1d9;
+    }
+
     .project-btn {
       margin-top: 16px;
-      border: 1px solid #58a6ff;
-      color: #58a6ff;
-      background-color: transparent;
+      background-color: #0d6efd;
+      color: #fff;
       padding: 8px 14px;
       border-radius: 8px;
       text-decoration: none;
@@ -89,22 +111,29 @@
     }
 
     .project-btn:hover {
-      background-color: #238636;
-      border-color: #238636;
-      color: #fff;
+      background-color: #0b5ed7;
     }
 
     footer {
-      background-color: #161b22;
+      background-color: #f1f1f1;
       padding: 24px 0;
       text-align: center;
-      color: #8b949e;
+      color: #333;
       margin-top: 60px;
+    }
+
+    .dark-mode footer {
+      background-color: #161b22;
+      color: #8b949e;
     }
 
     .social-icons img {
       width: 26px;
       margin: 0 8px;
+      filter: none;
+    }
+
+    .dark-mode .social-icons img {
       filter: brightness(0) invert(1);
     }
 
@@ -119,7 +148,7 @@
 </head>
 
 <body>
-  <button class="toggle-btn" onclick="toggleMode()">Toggle Light</button>
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Dark Mode</button>
 
   <div class="container">
     <h2>My Projects</h2>
@@ -134,7 +163,7 @@
           <span class="badge">Express</span>
           <span class="badge">MySQL</span>
         </div>
-        <a href="https://github.com/krishnachaitanya124/Ayush_Startups.git" class="project-btn" target="_blank">👁️ View Details</a>
+        <a href="https://github.com/krishnachaitanya124/Ayush_Startups.git" class="project-btn" target="_blank">GitHub Repo</a>
       </div>
 
       <div class="project-card">
@@ -146,7 +175,7 @@
           <span class="badge">Express</span>
           <span class="badge">MySQL</span>
         </div>
-        <a href="https://github.com/krishnachaitanya124/Medicine-Remainder-and-Tracker.git" class="project-btn" target="_blank">👁️ View Details</a>
+        <a href="https://github.com/krishnachaitanya124/Medicine-Remainder-and-Tracker.git" class="project-btn" target="_blank">GitHub Repo</a>
       </div>
 
       <div class="project-card">
@@ -158,7 +187,7 @@
           <span class="badge">Express</span>
           <span class="badge">MySQL</span>
         </div>
-        <a href="https://github.com/krishnachaitanya124/Gatepass_Frontend.git" class="project-btn" target="_blank">👁️ View Details</a>
+        <a href="https://github.com/krishnachaitanya124/Gatepass_Frontend.git" class="project-btn" target="_blank">GitHub Repo</a>
       </div>
 
     </div>
@@ -175,14 +204,7 @@
 
   <script>
     function toggleMode() {
-      document.body.classList.toggle('light-mode');
-      if (document.body.classList.contains('light-mode')) {
-        document.body.style.backgroundColor = '#ffffff';
-        document.body.style.color = '#1a1a1a';
-      } else {
-        document.body.style.backgroundColor = '#0d1117';
-        document.body.style.color = '#c9d1d9';
-      }
+      document.body.classList.toggle('dark-mode');
     }
   </script>
 </body>
