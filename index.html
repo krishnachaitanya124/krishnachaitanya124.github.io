@@ -1,51 +1,50 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Uppada Krishna Chaitanya | Full Stack Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Uppada Krishna Chaitanya</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="intro-section">
-    <div class="intro-text">
-      <h1>Hi, I am Uppada Krishna Chaitanya,<br><span>Full Stack Developer</span></h1>
-      <p>To utilize my strong communication skills, technical expertise in web development, and creative 
-abilities in UI/UX to deliver impactful projects. I aim to contribute to innovative software and design 
-solutions while fostering leadership and collaboration within a dynamic team environment.</p>
-      <a href="resume.pdf" class="btn-resume" download>Download Resume</a>
-    </div>
-    <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
-  </header>
+  <!-- Dark Mode Toggle Button -->
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">
+    Toggle Dark Mode
+  </button>
 
   <section class="projects-section">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <img src="ayush2.png" alt="AYUSH Project" />
-      <h3>REGISTRATION PORTAL FOR AYUSH STARTUPS</h3>
-      <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span></div>
-      <p>A comprehensive AYUSH Startup Registration Portal to streamline...</p>
-      <a href="https://github.com/krishnachaitanya124/Ayush_Startups.git">GitHub Repo</a>
-    </div>
+    <h2>Projects</h2>
+    <div class="project-grid">
 
-    <div class="project-card">
-      <img src="medicine.jpg" alt="Medicine Tracker" />
-      <h3>MEDICINE REMINDER & TRACKER</h3>
-      <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span></div>
-      <p>An app that reminds patients to take their medication...</p>
-      <a href="https://github.com/krishnachaitanya124/Medicine-Reminder-and-Tracker.git">GitHub Repo</a>
-    </div>
+      <div class="project-card">
+        <img src="ayush2.png" alt="AYUSH Project" />
+        <h3>REGISTRATION PORTAL FOR AYUSH STARTUPS</h3>
+        <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span></div>
+        <p>A comprehensive AYUSH Startup Registration Portal to streamline onboarding, licensing, and document tracking across India.</p>
+        <a href="https://github.com/krishnachaitanya124/Ayush_Startups.git" target="_blank">GitHub Repo</a>
+      </div>
 
-    <div class="project-card">
-      <img src="outpass.jpg" alt="Outpass System" />
-      <h3>Fingerprint-Based Out Pass Generation System</h3>
-      <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span></div>
-      <p>This project introduces a scalable fingerprint-based outpass system...</p>
-      <a href="https://github.com/krishnachaitanya124/Outpass.git">GitHub Repo</a>
+      <div class="project-card">
+        <img src="medicine.jpg" alt="Medicine Tracker" />
+        <h3>MEDICINE REMINDER & TRACKER</h3>
+        <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span></div>
+        <p>An app that reminds patients to take their medication on time using smart calendar and notification integration.</p>
+        <a href="https://github.com/krishnachaitanya124/Medicine-Remainder-and-Tracker.git" target="_blank">GitHub Repo</a>
+      </div>
+
+      <div class="project-card">
+        <img src="outpass.jpg" alt="Outpass System" />
+        <h3>Fingerprint-Based Out Pass Generation System</h3>
+        <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span></div>
+        <p>This project introduces a scalable fingerprint-based outpass system for hostels to improve security and streamline approvals.</p>
+        <a href="https://github.com/krishnachaitanya124/Gatepass_Frontend.git" target="_blank">GitHub Repo</a>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
   <footer>
     <div class="social-icons">
@@ -53,7 +52,19 @@ solutions while fostering leadership and collaboration within a dynamic team env
       <a href="https://x.com/ChaitanyaUppada"><img src="twitter.svg" alt="Twitter" /></a>
       <a href="https://www.linkedin.com/in/uppada-krishna-chaitanya-842517271/"><img src="linkedin.svg" alt="LinkedIn" /></a>
     </div>
-    <p>Copyright ©2020 All rights reserved</p>
+    <p>Copyright ©2025 Uppada Krishna Chaitanya</p>
   </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const mode = localStorage.getItem('dark-mode');
+    if (mode === 'enabled') document.body.classList.add('dark-mode');
+
+    document.querySelector('.toggle-btn').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('dark-mode',
+        document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+    });
+  </script>
 </body>
 </html>
