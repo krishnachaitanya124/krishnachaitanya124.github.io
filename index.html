@@ -48,18 +48,26 @@
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 24px;
-      transition: 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
     }
 
     .dark-mode .project-card {
-      background-color: #161b22 !important;
-      box-shadow: 0 0 0 1px #30363d !important;
+      background-color: #161b22;
+      box-shadow: 0 0 0 1px #30363d;
     }
 
     .project-card:hover {
-      transform: scale(1.01);
+      transform: translateY(-5px);
       box-shadow: 0 0 0 2px #0d6efd;
+    }
+
+    .project-img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 16px;
     }
 
     .project-title {
@@ -128,13 +136,13 @@
     }
 
     .social-icons img {
-      width: 26px;
-      margin: 0 8px;
-      filter: none;
+      width: 28px;
+      margin: 0 10px;
+      transition: filter 0.3s ease;
     }
 
     .dark-mode .social-icons img {
-      filter: brightness(0) invert(1);
+      filter: invert(1);
     }
 
     @media (min-width: 768px) {
@@ -155,6 +163,7 @@
     <div class="project-grid">
 
       <div class="project-card">
+        <img src="ayush2.png" alt="AYUSH Project" class="project-img" />
         <div class="project-title">AYUSH Startups Portal</div>
         <div class="project-desc">A platform for startup registration and document validation for the AYUSH sector in India.</div>
         <div>
@@ -167,6 +176,7 @@
       </div>
 
       <div class="project-card">
+        <img src="medicine.jpg" alt="Medicine Tracker" class="project-img" />
         <div class="project-title">Medicine Reminder & Tracker</div>
         <div class="project-desc">An app to notify patients for timely medicine intake using calendar scheduling and alerts.</div>
         <div>
@@ -179,6 +189,7 @@
       </div>
 
       <div class="project-card">
+        <img src="outpass.jpg" alt="Outpass System" class="project-img" />
         <div class="project-title">Fingerprint-Based Out Pass</div>
         <div class="project-desc">A hostel leave system integrated with fingerprint verification and digital approval flow.</div>
         <div>
